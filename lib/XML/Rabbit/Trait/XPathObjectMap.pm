@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObjectMap;
 BEGIN {
-  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.0.1';
+  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.0.2';
 }
 use Moose::Role;
 
@@ -60,7 +60,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathObjectMap;
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::XPathObjectMap::VERSION = '0.0.1';
+  $Moose::Meta::Attribute::Custom::Trait::XPathObjectMap::VERSION = '0.0.2';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathObjectMap' }
 
@@ -78,7 +78,7 @@ XML::Rabbit::Trait::XPathObjectMap - Multiple XML DOM object xpath extractor tra
 
 =head1 VERSION
 
-version 0.0.1
+version 0.0.2
 
 =head1 SYNOPSIS
 

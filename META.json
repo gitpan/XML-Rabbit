@@ -16,7 +16,8 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.31",
+            "XML::LibXML" : "1.70"
          }
       },
       "runtime" : {
@@ -41,7 +42,7 @@
          }
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "repository" : {
          "type" : "git",
@@ -49,6 +50,6 @@
          "web" : "http://github.com/robinsmidsrod/XML-Rabbit"
       }
    },
-   "version" : "0.0.1"
+   "version" : "0.0.2"
 }
 

@@ -6,9 +6,11 @@ META.json
 META.yml
 Makefile.PL
 README
+README.mkdn
 bin/dump_xml_structure
 bin/xpath_extract
 dist.ini
+inc/MyMakeMaker.pm
 lib/XML/Rabbit.pm
 lib/XML/Rabbit/Node.pm
 lib/XML/Rabbit/Role/Document.pm
@@ -21,7 +23,8 @@ lib/XML/Rabbit/Trait/XPathObjectMap.pm
 lib/XML/Rabbit/Trait/XPathValue.pm
 lib/XML/Rabbit/Trait/XPathValueList.pm
 lib/XML/Rabbit/Trait/XPathValueMap.pm
-t/00-load.t
+t/00_load.t
+t/01_libxml_version.t
 t/10_parse_xhtml_fh.t
 t/10_parse_xhtml_file.t
 t/10_parse_xhtml_string.t

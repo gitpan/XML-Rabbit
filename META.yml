@@ -8,6 +8,7 @@ build_requires:
   utf8: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
+  XML::LibXML: 1.70
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 4.101612, CPAN::Meta::Converter version 2.101610'
 license: perl
@@ -28,4 +29,4 @@ requires:
   perl: 5.008
 resources:
   repository: git://github.com/robinsmidsrod/XML-Rabbit.git
-version: 0.0.1
+version: 0.0.2

@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathValueMap;
 BEGIN {
-  $XML::Rabbit::Trait::XPathValueMap::VERSION = '0.0.1';
+  $XML::Rabbit::Trait::XPathValueMap::VERSION = '0.0.2';
 }
 use Moose::Role;
 
@@ -60,7 +60,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathValueMap;
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::XPathValueMap::VERSION = '0.0.1';
+  $Moose::Meta::Attribute::Custom::Trait::XPathValueMap::VERSION = '0.0.2';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathValueMap' }
 
@@ -78,7 +78,7 @@ XML::Rabbit::Trait::XPathValueMap - Multiple value xpath extractor trait
 
 =head1 VERSION
 
-version 0.0.1
+version 0.0.2
 
 =head1 SYNOPSIS
 
