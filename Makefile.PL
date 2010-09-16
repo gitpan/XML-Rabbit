@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     'Scalar::Util' => '0',
     'XML::LibXML' => '1.70'
   },
-  'VERSION' => '0.0.2',
+  'VERSION' => '0.0.3',
   'test' => {
     'TESTS' => 't/*.t'
   }

@@ -10,7 +10,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.31
   XML::LibXML: 1.70
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101612, CPAN::Meta::Converter version 2.101610'
+generated_by: 'Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.101610'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -29,4 +29,4 @@ requires:
   perl: 5.008
 resources:
   repository: git://github.com/robinsmidsrod/XML-Rabbit.git
-version: 0.0.2
+version: 0.0.3

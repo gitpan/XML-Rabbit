@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPath;
 BEGIN {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.0.2';
+  $XML::Rabbit::Trait::XPath::VERSION = '0.0.3';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
@@ -21,7 +21,17 @@ around '_process_options' => sub {
     $options->{'is'} = 'ro';
     $options->{'init_arg'} = undef;
     $options->{'lazy'} = 1;
-    $options->{'default'} = sub { 'FAIL_IF_YOU_SEE_THIS' };
+
+    # Will call _build_default which should be composited in
+    # from another role. _build_default should return a coderef that is
+    # executed in the context of the parent (the class with the attribute defined).
+    $options->{'default'} = sub {
+        my ($parent) = @_;
+        my $self = $parent->meta->find_attribute_by_name($name);
+        my $actual_builder = $self->_build_default();
+        return $actual_builder unless ref($actual_builder) eq 'CODE';
+        return &$actual_builder( $parent );
+    };
 
     # TODO: Maybe throw raging exceptions instead?
     delete $options->{'builder'};
@@ -53,18 +63,6 @@ around '_process_options' => sub {
     $self->$orig($name, $options, @rest);
 };
 
-
-# Will call _build_default which should be composited in
-# from another role. _build_default should return a coderef that is
-# executed in the context of the parent (the class with the attribute defined).
-
-## no critic qw(Subroutines::ProhibitBuiltinHomonyms)
-sub default {
-    my ($self, $parent) = @_;
-    my $actual_builder = $self->_build_default();
-    return $actual_builder unless ref($actual_builder) eq 'CODE';
-    return &$actual_builder( $parent );
-}
 
 
 has 'xpath_query' => (
@@ -223,7 +221,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.0.2
+version 0.0.3
 
 =head1 SYNOPSIS
 
@@ -264,7 +262,7 @@ to find the wanted value. Read Only.
 
 =head1 METHODS
 
-=head2 default
+=head2 _build_default
 
 Each trait that composes this trait will need to define a method name
 C<_build_default>. The _build_default method is called as a method on the

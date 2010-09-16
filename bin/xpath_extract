@@ -42,7 +42,7 @@ sub print_xml {
 BEGIN {
     package XML::Rabbit::XPathExtract;
 BEGIN {
-  $XML::Rabbit::XPathExtract::VERSION = '0.0.2';
+  $XML::Rabbit::XPathExtract::VERSION = '0.0.3';
 }
     use Moose;
     with 'XML::Rabbit::RootNode';
@@ -70,7 +70,7 @@ BEGIN {
 
     package XPathObject;
 BEGIN {
-  $XPathObject::VERSION = '0.0.2';
+  $XPathObject::VERSION = '0.0.3';
 }
     use Moose;
     with 'XML::Rabbit::Node';
