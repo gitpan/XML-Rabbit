@@ -3,6 +3,11 @@
 use strict;
 use warnings;
 
+package main;
+BEGIN {
+  $main::VERSION = '0.0.4';
+}
+
 use XML::LibXML 1.70;
 use Scalar::Util qw(blessed);
 
@@ -50,3 +55,30 @@ sub trim_node_path {
     $node_path =~ s/\[\d+\]//xmsg; # Strip explicit count number
     return $node_path;
 }
+
+__END__
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+main
+
+=head1 VERSION
+
+version 0.0.4
+
+=head1 AUTHOR
+
+Robin Smidsrød <robin@smidsrod.no>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Robin Smidsrød.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

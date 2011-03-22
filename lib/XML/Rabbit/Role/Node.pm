@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Role::Node;
 BEGIN {
-  $XML::Rabbit::Role::Node::VERSION = '0.0.3';
+  $XML::Rabbit::Role::Node::VERSION = '0.0.4';
 }
 use MooseX::Role::Parameterized;
 
@@ -74,7 +74,7 @@ XML::Rabbit::Role::Node - Base role for all nodes
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -116,11 +116,11 @@ Dumps the XML of the current node as a native perl string.
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

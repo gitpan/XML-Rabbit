@@ -10,6 +10,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Robin Smidsrød <robin@smidsrod.no>',
   'BUILD_REQUIRES' => {
     'English' => '0',
+    'Test::Exception' => '0',
     'Test::More' => '0',
     'utf8' => '0'
   },
@@ -19,8 +20,8 @@ my %WriteMakefileArgs = (
   },
   'DISTNAME' => 'XML-Rabbit',
   'EXE_FILES' => [
-    'bin/dump_xml_structure',
-    'bin/xpath_extract'
+    'bin/xpath_extract',
+    'bin/dump_xml_structure'
   ],
   'LICENSE' => 'perl',
   'NAME' => 'XML::Rabbit',
@@ -35,9 +36,9 @@ my %WriteMakefileArgs = (
     'Scalar::Util' => '0',
     'XML::LibXML' => '1.70'
   },
-  'VERSION' => '0.0.3',
+  'VERSION' => '0.0.4',
   'test' => {
-    'TESTS' => 't/*.t'
+    'TESTS' => 't/*.t t/regression/*.t'
   }
 );
 

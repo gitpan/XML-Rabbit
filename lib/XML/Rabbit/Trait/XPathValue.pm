@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathValue;
 BEGIN {
-  $XML::Rabbit::Trait::XPathValue::VERSION = '0.0.3';
+  $XML::Rabbit::Trait::XPathValue::VERSION = '0.0.4';
 }
 use Moose::Role;
 
@@ -29,7 +29,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathValue;
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::XPathValue::VERSION = '0.0.3';
+  $Moose::Meta::Attribute::Custom::Trait::XPathValue::VERSION = '0.0.4';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathValue' }
 
@@ -47,7 +47,7 @@ XML::Rabbit::Trait::XPathValue - Single value xpath extractor trait
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -80,11 +80,11 @@ Returns a coderef that is run to build the default value of the parent attribute
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

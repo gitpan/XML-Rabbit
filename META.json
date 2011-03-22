@@ -4,7 +4,7 @@
       "Robin Smidsr\u00c3\u00b8d <robin@smidsrod.no>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.101610",
+   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -37,6 +37,7 @@
       "test" : {
          "requires" : {
             "English" : 0,
+            "Test::Exception" : 0,
             "Test::More" : 0,
             "utf8" : 0
          }
@@ -50,6 +51,6 @@
          "web" : "http://github.com/robinsmidsrod/XML-Rabbit"
       }
    },
-   "version" : "0.0.3"
+   "version" : "0.0.4"
 }
 

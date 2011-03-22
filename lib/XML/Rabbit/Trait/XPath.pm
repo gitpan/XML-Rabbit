@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPath;
 BEGIN {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.0.3';
+  $XML::Rabbit::Trait::XPath::VERSION = '0.0.4';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
@@ -221,7 +221,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -286,11 +286,11 @@ Below you can see an example from the XPathValue trait:
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

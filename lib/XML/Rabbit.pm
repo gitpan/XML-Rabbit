@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit;
 BEGIN {
-  $XML::Rabbit::VERSION = '0.0.3';
+  $XML::Rabbit::VERSION = '0.0.4';
 }
 use 5.008;
 
@@ -23,7 +23,7 @@ XML::Rabbit - Consume XML with Moose and xpath queries
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -277,11 +277,11 @@ notified, and then you'll automatically be notified of progress on your bug as I
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

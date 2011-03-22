@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::RootNode;
 BEGIN {
-  $XML::Rabbit::RootNode::VERSION = '0.0.3';
+  $XML::Rabbit::RootNode::VERSION = '0.0.4';
 }
 use Moose::Role;
 with 'XML::Rabbit::Role::Document';
@@ -60,7 +60,7 @@ XML::Rabbit::RootNode - Root node base class
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -106,11 +106,11 @@ required on XML files that use namespaces, like XHTML.
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

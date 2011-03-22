@@ -3,11 +3,19 @@ use warnings;
 
 package XML::Rabbit::Node;
 BEGIN {
-  $XML::Rabbit::Node::VERSION = '0.0.3';
+  $XML::Rabbit::Node::VERSION = '0.0.4';
 }
 use Moose::Role;
 
 # ABSTRACT: Node base class
+
+# Preload XPath attribute traits
+use XML::Rabbit::Trait::XPathValue;
+use XML::Rabbit::Trait::XPathValueList;
+use XML::Rabbit::Trait::XPathValueMap;
+use XML::Rabbit::Trait::XPathObject;
+use XML::Rabbit::Trait::XPathObjectList;
+use XML::Rabbit::Trait::XPathObjectMap;
 
 
 with 'XML::Rabbit::Role::Node' => {
@@ -32,7 +40,7 @@ XML::Rabbit::Node - Node base class
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -53,7 +61,7 @@ version 0.0.3
 
 =head1 DESCRIPTION
 
-This module provides the base node attribute used to hold a specific node in the XML docuent tree.
+This module provides the base node attribute used to hold a specific node in the XML document tree.
 
 See L<XML::Rabbit> for a more complete example.
 
@@ -69,11 +77,11 @@ An instance of a L<XML::LibXML::XPathContext> class initialized with the C<node>
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

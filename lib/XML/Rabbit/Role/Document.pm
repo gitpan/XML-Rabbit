@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Role::Document;
 BEGIN {
-  $XML::Rabbit::Role::Document::VERSION = '0.0.3';
+  $XML::Rabbit::Role::Document::VERSION = '0.0.4';
 }
 use Moose::Role;
 
@@ -87,7 +87,7 @@ XML::Rabbit::Role::Document - XML Document base class
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
 
@@ -123,11 +123,11 @@ Dumps the XML of the entire document as a native perl string.
 
 =head1 AUTHOR
 
-  Robin Smidsrød <robin@smidsrod.no>
+Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robin Smidsrød.
+This software is copyright (c) 2011 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
