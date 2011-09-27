@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::RootNode;
-BEGIN {
-  $XML::Rabbit::RootNode::VERSION = '0.0.4';
+{
+  $XML::Rabbit::RootNode::VERSION = '0.1.0';
 }
 use Moose::Role;
 with 'XML::Rabbit::Role::Document';
@@ -60,7 +60,7 @@ XML::Rabbit::RootNode - Root node base class
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 

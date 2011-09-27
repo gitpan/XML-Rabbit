@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::Trait::XPathValueList;
-BEGIN {
-  $XML::Rabbit::Trait::XPathValueList::VERSION = '0.0.4';
+{
+  $XML::Rabbit::Trait::XPathValueList::VERSION = '0.1.0';
 }
 use Moose::Role;
 
@@ -40,8 +40,8 @@ no Moose::Role;
 
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathValueList;
-BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::XPathValueList::VERSION = '0.0.4';
+{
+  $Moose::Meta::Attribute::Custom::Trait::XPathValueList::VERSION = '0.1.0';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathValueList' }
 
@@ -59,7 +59,7 @@ XML::Rabbit::Trait::XPathValueList - Multiple value xpath extractor trait
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 

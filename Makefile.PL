@@ -3,7 +3,7 @@
 BEGIN { require 5.008; }
 use strict;
 use warnings;
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'Consume XML with Moose and xpath queries',
@@ -15,7 +15,7 @@ my %WriteMakefileArgs = (
     'utf8' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31',
+    'ExtUtils::MakeMaker' => '6.30',
     'XML::LibXML' => '1.70'
   },
   'DISTNAME' => 'XML-Rabbit',
@@ -26,17 +26,22 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'XML::Rabbit',
   'PREREQ_PM' => {
+    'Carp' => '0',
     'Data::Visitor::Callback' => '0',
     'Encode' => '0',
     'Moose' => '0',
+    'Moose::Exporter' => '0',
     'Moose::Role' => '0',
     'Moose::Util::TypeConstraints' => '0',
     'MooseX::Role::Parameterized' => '0',
     'Perl6::Junction' => '0',
     'Scalar::Util' => '0',
-    'XML::LibXML' => '1.70'
+    'XML::LibXML' => '1.70',
+    'namespace::autoclean' => '0',
+    'strict' => '0',
+    'warnings' => '0'
   },
-  'VERSION' => '0.0.4',
+  'VERSION' => '0.1.0',
   'test' => {
     'TESTS' => 't/*.t t/regression/*.t'
   }
@@ -45,10 +50,10 @@ my %WriteMakefileArgs = (
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM}; 
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
   for my $mod ( keys %$br ) {
     if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
     }
     else {
       $pp->{$mod} = $br->{$mod};

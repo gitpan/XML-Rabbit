@@ -4,7 +4,7 @@
       "Robin Smidsr\u00c3\u00b8d <robin@smidsrod.no>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112150",
    "license" : [
       "perl_5"
    ],
@@ -16,22 +16,27 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31",
+            "ExtUtils::MakeMaker" : "6.30",
             "XML::LibXML" : "1.70"
          }
       },
       "runtime" : {
          "requires" : {
+            "Carp" : 0,
             "Data::Visitor::Callback" : 0,
             "Encode" : 0,
             "Moose" : 0,
+            "Moose::Exporter" : 0,
             "Moose::Role" : 0,
             "Moose::Util::TypeConstraints" : 0,
             "MooseX::Role::Parameterized" : 0,
             "Perl6::Junction" : 0,
             "Scalar::Util" : 0,
             "XML::LibXML" : "1.70",
-            "perl" : "5.008"
+            "namespace::autoclean" : 0,
+            "perl" : "5.008",
+            "strict" : 0,
+            "warnings" : 0
          }
       },
       "test" : {
@@ -51,6 +56,6 @@
          "web" : "http://github.com/robinsmidsrod/XML-Rabbit"
       }
    },
-   "version" : "0.0.4"
+   "version" : "0.1.0"
 }
 

@@ -3,7 +3,10 @@
 use strict;
 use warnings;
 
-binmode(STDOUT, ':utf8');
+# PODNAME: xpath_extract
+# ABSTRACT: Extracts the matches for the given XPath query from an XML file
+
+binmode(STDOUT, ':encoding(UTF-8)');
 
 my $xpath = shift;
 die("No XPath query specified!\n") unless $xpath;
@@ -41,8 +44,8 @@ sub print_xml {
 ## no critic qw(Modules::ProhibitMultiplePackages)
 BEGIN {
     package XML::Rabbit::XPathExtract;
-BEGIN {
-  $XML::Rabbit::XPathExtract::VERSION = '0.0.4';
+{
+  $XML::Rabbit::XPathExtract::VERSION = '0.1.0';
 }
     use Moose;
     with 'XML::Rabbit::RootNode';
@@ -69,8 +72,8 @@ BEGIN {
     __PACKAGE__->meta->make_immutable();
 
     package XPathObject;
-BEGIN {
-  $XPathObject::VERSION = '0.0.4';
+{
+  $XPathObject::VERSION = '0.1.0';
 }
     use Moose;
     with 'XML::Rabbit::Node';
@@ -88,11 +91,11 @@ __END__
 
 =head1 NAME
 
-XML::Rabbit::XPathExtract
+xpath_extract - Extracts the matches for the given XPath query from an XML file
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 AUTHOR
 

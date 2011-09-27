@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::Trait::XPathObjectList;
-BEGIN {
-  $XML::Rabbit::Trait::XPathObjectList::VERSION = '0.0.4';
+{
+  $XML::Rabbit::Trait::XPathObjectList::VERSION = '0.1.0';
 }
 use Moose::Role;
 
@@ -50,8 +50,8 @@ no Moose::Role;
 
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathObjectList;
-BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::XPathObjectList::VERSION = '0.0.4';
+{
+  $Moose::Meta::Attribute::Custom::Trait::XPathObjectList::VERSION = '0.1.0';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathObjectList' }
 
@@ -69,7 +69,7 @@ XML::Rabbit::Trait::XPathObjectList - Multiple XML DOM object xpath extractor tr
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 

@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::Role::Node;
-BEGIN {
-  $XML::Rabbit::Role::Node::VERSION = '0.0.4';
+{
+  $XML::Rabbit::Role::Node::VERSION = '0.1.0';
 }
 use MooseX::Role::Parameterized;
 
@@ -52,10 +52,7 @@ role {
 
 sub dump_xml {
     my ($self) = @_;
-    return Encode::decode(
-        $self->node->ownerDocument->actualEncoding,
-        $self->node->toString(1),
-    );
+    return $self->node->toString(1);
 }
 
 no MooseX::Role::Parameterized;
@@ -74,7 +71,7 @@ XML::Rabbit::Role::Node - Base role for all nodes
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 

@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::Trait::XPath;
-BEGIN {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.0.4';
+{
+  $XML::Rabbit::Trait::XPath::VERSION = '0.1.0';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
@@ -177,6 +177,7 @@ sub _create_instance {
         $class = $self->isa_map->{ $node_name };
     }
     confess("Unable to resolve class for node " . $node->nodeName) unless $class;
+    Class::MOP::load_class($class); # FIXME: This should be fixed at line 153
     my $instance = $class->new(
         xpc           => $parent->xpc,
         node          => $node,
@@ -221,7 +222,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 

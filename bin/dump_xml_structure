@@ -3,15 +3,13 @@
 use strict;
 use warnings;
 
-package main;
-BEGIN {
-  $main::VERSION = '0.0.4';
-}
+# PODNAME: dump_xml_structure
+# ABSTRACT: Dumps the XPath structure of an XML file
 
 use XML::LibXML 1.70;
 use Scalar::Util qw(blessed);
 
-binmode STDOUT, ':utf8';
+binmode STDOUT, ':encoding(UTF-8)';
 
 my $dom = XML::LibXML->load_xml(
     location => $ARGV[0],
@@ -63,11 +61,11 @@ __END__
 
 =head1 NAME
 
-main
+dump_xml_structure - Dumps the XPath structure of an XML file
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 AUTHOR
 

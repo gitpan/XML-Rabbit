@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package XML::Rabbit::Role::Document;
-BEGIN {
-  $XML::Rabbit::Role::Document::VERSION = '0.0.4';
+{
+  $XML::Rabbit::Role::Document::VERSION = '0.1.0';
 }
 use Moose::Role;
 
@@ -20,12 +20,14 @@ has '_file' => (
     predicate => '_has_file',
 );
 
+
 has '_fh' => (
     is        => 'ro',
     isa       => 'GlobRef',
     init_arg  => 'fh',
     predicate => '_has_fh',
 );
+
 
 has '_xml' => (
     is        => 'ro',
@@ -34,21 +36,12 @@ has '_xml' => (
     predicate => '_has_xml',
 );
 
-has '_parser' => (
-    is      => 'ro',
-    isa     => 'XML::LibXML',
-    lazy    => 1,
-    default => sub { XML::LibXML->new(), },
-);
-
 
 has '_document' => (
-    is       => 'ro',
-    isa      => 'XML::LibXML::Document',
-    lazy     => 1,
-    builder  => '_build__document',
-    reader   => '_document',
-    init_arg => 'dom',
+    is         => 'ro',
+    isa        => 'XML::LibXML::Document',
+    lazy_build => 1,
+    init_arg   => 'dom',
 );
 
 sub _build__document {
@@ -58,9 +51,16 @@ sub _build__document {
     $doc = $self->_parser->parse_file(   $self->_file ) if $self->_has_file;
     $doc = $self->_parser->parse_fh(     $self->_fh   ) if $self->_has_fh and not defined($doc);
     $doc = $self->_parser->parse_string( $self->_xml  ) if $self->_has_xml and not defined($doc);
-    confess("No input specified. Please specify argument file, fh or xml.\n") unless $doc;
+    confess("No input specified. Please specify argument file, fh, xml or dom.\n") unless $doc;
     return $doc;
 }
+
+has '_parser' => (
+    is      => 'ro',
+    isa     => 'XML::LibXML',
+    lazy    => 1,
+    default => sub { XML::LibXML->new(), },
+);
 
 
 sub dump_document_xml {
@@ -87,7 +87,7 @@ XML::Rabbit::Role::Document - XML Document base class
 
 =head1 VERSION
 
-version 0.0.4
+version 0.1.0
 
 =head1 SYNOPSIS
 
@@ -107,13 +107,21 @@ See L<XML::Rabbit> for a more complete example.
 
 =head1 ATTRIBUTES
 
-=head2 file
+=head2 _file
 
-A string representing the path to the file that contains the XML document data. Required.
+A string representing the path to the file that contains the XML document data. Read Only. Constructor parameter is C<file>.
+
+=head2 _fh
+
+A glob reference / file handle that points to the XML document data. Read Only. Constructor parameter is C<fh>.
+
+=head2 _xml
+
+A binary string containing the XML document data. Read Only. Constructor parameter is C<xml>.
 
 =head2 _document
 
-An instance of a L<XML::LibXML::Document> class. Read Only.
+An instance of an L<XML::LibXML::Document> class. Read Only. Constructor parameter is C<dom>.
 
 =head1 METHODS
 
