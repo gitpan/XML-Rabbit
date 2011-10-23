@@ -35,4 +35,4 @@ requires:
   warnings: 0
 resources:
   repository: git://github.com/robinsmidsrod/XML-Rabbit.git
-version: 0.1.0
+version: 0.1.1

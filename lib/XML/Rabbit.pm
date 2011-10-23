@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit;
 {
-  $XML::Rabbit::VERSION = '0.1.0';
+  $XML::Rabbit::VERSION = '0.1.1';
 }
 use 5.008;
 
@@ -63,7 +63,7 @@ XML::Rabbit - Consume XML with Moose and xpath queries
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -267,6 +267,10 @@ L<XPath tutorial|http://zvon.org/comp/r/tut-XPath_1.html>
 =item *
 
 L<XPath Specification|http://www.w3.org/TR/xpath/>
+
+=item *
+
+L<Implementing WWW::LastFM, a client library to the Last.FM API, with XML::Rabbit|http://blog.robin.smidsrod.no/2011/09/30/implementing-www-lastfm-part-1>
 
 =back
 

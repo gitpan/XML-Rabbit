@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Root;
 {
-  $XML::Rabbit::Root::VERSION = '0.1.0';
+  $XML::Rabbit::Root::VERSION = '0.1.1';
 }
 use 5.008;
 
@@ -62,7 +62,7 @@ XML::Rabbit::Root - Root class with sugar functions available
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 FUNCTIONS
 

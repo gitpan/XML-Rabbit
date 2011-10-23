@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObjectMap;
 {
-  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.1.0';
+  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.1.1';
 }
 use Moose::Role;
 
@@ -49,7 +49,9 @@ sub _build_default {
         my %node_map;
         foreach my $node ( $self->_find_nodes($parent, $xpath_query ) ) {
             my $key = $parent->xpc->findvalue( $self->xpath_key, $node );
-            $node_map{ $key } = $self->_create_instance( $parent, $class, $node );
+            if ( defined($key) and length $key > 0 ) {
+                $node_map{ $key } = $self->_create_instance( $parent, $class, $node );
+            }
         }
         return \%node_map;
     };
@@ -60,7 +62,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathObjectMap;
 {
-  $Moose::Meta::Attribute::Custom::Trait::XPathObjectMap::VERSION = '0.1.0';
+  $Moose::Meta::Attribute::Custom::Trait::XPathObjectMap::VERSION = '0.1.1';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathObjectMap' }
 
@@ -78,7 +80,7 @@ XML::Rabbit::Trait::XPathObjectMap - Multiple XML DOM object xpath extractor tra
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 

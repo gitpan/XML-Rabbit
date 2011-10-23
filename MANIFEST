@@ -38,6 +38,7 @@ t/15_sugar_parse_imsqti.t
 t/16_sugar_xpath_value_map.t
 t/17_sugar_xpath_object_map.t
 t/18_dump_xml.t
+t/19_RT_71815.t
 t/author-critic.t
 t/data/10_parse_xhtml.xhtml
 t/data/imsqti_v2p1.xsd

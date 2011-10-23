@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathValueMap;
 {
-  $XML::Rabbit::Trait::XPathValueMap::VERSION = '0.1.0';
+  $XML::Rabbit::Trait::XPathValueMap::VERSION = '0.1.1';
 }
 use Moose::Role;
 
@@ -45,11 +45,10 @@ sub _build_default {
         my %node_map;
         foreach my $node ( $self->_find_nodes( $parent, $xpath_query ) ) {
             my $key = $parent->xpc->findvalue( $self->xpath_key, $node );
-            my $value = $parent->xpc->findvalue( $self->xpath_value, $node );
-            if ( ! ( defined($value) and length $value > 0 ) ) {
-                confess("xpath_key value is empty, please revise your xpath_query");
+            if ( defined($key) and length $key > 0 ) {
+                my $value = $parent->xpc->findvalue( $self->xpath_value, $node );
+                $node_map{$key} = $value;
             }
-            $node_map{$key} = $value;
         }
         return \%node_map;
     };
@@ -60,7 +59,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathValueMap;
 {
-  $Moose::Meta::Attribute::Custom::Trait::XPathValueMap::VERSION = '0.1.0';
+  $Moose::Meta::Attribute::Custom::Trait::XPathValueMap::VERSION = '0.1.1';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathValueMap' }
 
@@ -78,7 +77,7 @@ XML::Rabbit::Trait::XPathValueMap - Multiple value xpath extractor trait
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 

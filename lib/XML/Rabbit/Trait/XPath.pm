@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPath;
 {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.1.0';
+  $XML::Rabbit::Trait::XPath::VERSION = '0.1.1';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
@@ -222,7 +222,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 

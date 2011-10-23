@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObject;
 {
-  $XML::Rabbit::Trait::XPathObject::VERSION = '0.1.0';
+  $XML::Rabbit::Trait::XPathObject::VERSION = '0.1.1';
 }
 use Moose::Role;
 
@@ -50,7 +50,7 @@ no Moose::Role;
 ## no critic qw(Modules::ProhibitMultiplePackages)
 package Moose::Meta::Attribute::Custom::Trait::XPathObject;
 {
-  $Moose::Meta::Attribute::Custom::Trait::XPathObject::VERSION = '0.1.0';
+  $Moose::Meta::Attribute::Custom::Trait::XPathObject::VERSION = '0.1.1';
 }
 sub register_implementation { return 'XML::Rabbit::Trait::XPathObject' }
 
@@ -68,7 +68,7 @@ XML::Rabbit::Trait::XPathObject - XML DOM object xpath extractor trait
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 

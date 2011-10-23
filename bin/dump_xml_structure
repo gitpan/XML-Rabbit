@@ -65,7 +65,7 @@ dump_xml_structure - Dumps the XPath structure of an XML file
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 AUTHOR
 
