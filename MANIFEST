@@ -6,6 +6,7 @@ META.json
 META.yml
 Makefile.PL
 README
+TODO
 bin/dump_xml_structure
 bin/xpath_extract
 dist.ini
@@ -39,6 +40,7 @@ t/16_sugar_xpath_value_map.t
 t/17_sugar_xpath_object_map.t
 t/18_dump_xml.t
 t/19_RT_71815.t
+t/20_RT_81519.t
 t/author-critic.t
 t/data/10_parse_xhtml.xhtml
 t/data/imsqti_v2p1.xsd
@@ -60,7 +62,6 @@ t/lib/W3C/XMLSchema/Element.pm
 t/lib/W3C/XMLSchema/Group.pm
 t/lib/W3C/XMLSchema/Sequence.pm
 t/regression/node_attribute_traits.t
-t/release-kwalitee.t
 t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

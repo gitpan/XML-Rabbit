@@ -9,7 +9,6 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Consume XML with Moose and xpath queries',
   'AUTHOR' => 'Robin Smidsrød <robin@smidsrod.no>',
   'BUILD_REQUIRES' => {
-    'English' => '0',
     'Test::Exception' => '0',
     'Test::More' => '0',
     'utf8' => '0'
@@ -29,7 +28,7 @@ my %WriteMakefileArgs = (
     'Carp' => '0',
     'Data::Visitor::Callback' => '0',
     'Encode' => '0',
-    'Moose' => '0',
+    'Moose' => '0.89',
     'Moose::Exporter' => '0',
     'Moose::Role' => '0',
     'Moose::Util::TypeConstraints' => '0',
@@ -41,7 +40,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.1.1',
+  'VERSION' => '0.2.1',
   'test' => {
     'TESTS' => 't/*.t t/regression/*.t'
   }

@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObject;
 {
-  $XML::Rabbit::Trait::XPathObject::VERSION = '0.1.1';
+  $XML::Rabbit::Trait::XPathObject::VERSION = '0.2.1';
 }
 use Moose::Role;
 
@@ -45,19 +45,14 @@ sub _build_default {
     };
 }
 
-no Moose::Role;
+Moose::Util::meta_attribute_alias('XPathObject');
 
-## no critic qw(Modules::ProhibitMultiplePackages)
-package Moose::Meta::Attribute::Custom::Trait::XPathObject;
-{
-  $Moose::Meta::Attribute::Custom::Trait::XPathObject::VERSION = '0.1.1';
-}
-sub register_implementation { return 'XML::Rabbit::Trait::XPathObject' }
+no Moose::Role;
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -68,7 +63,7 @@ XML::Rabbit::Trait::XPathObject - XML DOM object xpath extractor trait
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -114,10 +109,9 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Robin Smidsrød.
+This software is copyright (c) 2012 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

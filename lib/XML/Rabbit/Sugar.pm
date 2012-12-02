@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Sugar;
 {
-  $XML::Rabbit::Sugar::VERSION = '0.1.1';
+  $XML::Rabbit::Sugar::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Sugar functions for easier declaration of xpath attributes
@@ -11,7 +11,7 @@ package XML::Rabbit::Sugar;
 use Scalar::Util qw(blessed);
 use Carp qw(confess);
 
-use Moose (); # no magic, just load
+use Moose 0.89 (); # no magic, just load
 use Moose::Exporter;
 
 Moose::Exporter->setup_import_methods(
@@ -145,6 +145,7 @@ no Moose::Exporter;
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -155,7 +156,7 @@ XML::Rabbit::Sugar - Sugar functions for easier declaration of xpath attributes
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.1
 
 =head1 FUNCTIONS
 
@@ -289,10 +290,9 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Robin Smidsrød.
+This software is copyright (c) 2012 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

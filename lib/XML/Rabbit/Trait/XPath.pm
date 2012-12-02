@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPath;
 {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.1.1';
+  $XML::Rabbit::Trait::XPath::VERSION = '0.2.1';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
@@ -47,7 +47,7 @@ around '_process_options' => sub {
                 push @classes, $value,
             }
             # Build union isa
-            my $isa = join('|',@classes);
+            my $isa = join('|', @classes);
             # If traits indicate XPathObjectList, assume an ArrayRef
             if ( Perl6::Junction::any( @{ $options->{'traits'} } ) == qr/^XML::Rabbit::Trait::XPathObjectList$/x ) {
                 $isa = "ArrayRef[$isa]";
@@ -112,15 +112,22 @@ sub _resolve_class {
     my ($self) = @_;
 
     # Figure out classes mentioned in type constraint (isa)
-    my @classes;
+    my %classes;
     if ( $self->has_type_constraint ) {
         Data::Visitor::Callback->new({
             object => 'visit_ref',
             'Moose::Meta::TypeConstraint::Union'         => sub { return $_[1]->type_constraints; },
-            'Moose::Meta::TypeConstraint::Class'         => sub { push @classes, $_[1]->class; return $_[1]; },
+            'Moose::Meta::TypeConstraint::Class'         => sub { $classes{ $_[1]->class } = 1; return $_[1]; },
             'Moose::Meta::TypeConstraint::Parameterized' => sub { return $_[1]->type_parameter; },
         })->visit($self->type_constraint);
     }
+
+    # RT#81519: The above code was supposed to not return duplicate class
+    # namess when they are not present in the TC.  Perl 5.17.6 introduces
+    # hash seed randomization, which caused the above code to return
+    # duplicates.  Use a hash to kill duplicates.  Data::Visitor::Callback
+    # should be fixed to avoid this problem.
+    my @classes = keys %classes;
 
     # Runtime load each class
     foreach my $class ( @classes ) {
@@ -172,11 +179,13 @@ sub _create_instance {
     # Used for optional elements
     return unless $node;
 
-    unless( $class ) {
-        my $node_name = ( $node->namespaceURI ? '[' . $node->namespaceURI . ']' : "" ) . $node->localname;
+    unless ( $class ) {
+        my $node_name = ( $node->namespaceURI ? '[' . $node->namespaceURI . ']' : "" )
+                      . $node->localname;
         $class = $self->isa_map->{ $node_name };
     }
     confess("Unable to resolve class for node " . $node->nodeName) unless $class;
+
     Class::MOP::load_class($class); # FIXME: This should be fixed at line 153
     my $instance = $class->new(
         xpc           => $parent->xpc,
@@ -210,8 +219,8 @@ no Moose::Util::TypeConstraints;
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -222,7 +231,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -241,10 +250,9 @@ version 0.1.1
         };
     }
 
-    no Moose::Role;
+    Moose::Util::meta_attribute_alias('XPathSomething');
 
-    package Moose::Meta::Attribute::Custom::Trait::XPathSomething;
-    sub register_implementation { 'XML::Rabbit::Trait::XPathSomething' }
+    no Moose::Role;
 
     1;
 
@@ -291,10 +299,9 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Robin Smidsrød.
+This software is copyright (c) 2012 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

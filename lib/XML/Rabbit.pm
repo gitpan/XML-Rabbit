@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit;
 {
-  $XML::Rabbit::VERSION = '0.1.1';
+  $XML::Rabbit::VERSION = '0.2.1';
 }
 use 5.008;
 
@@ -51,8 +51,8 @@ sub init_meta {
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -63,7 +63,7 @@ XML::Rabbit - Consume XML with Moose and xpath queries
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -274,7 +274,7 @@ L<Implementing WWW::LastFM, a client library to the Last.FM API, with XML::Rabbi
 
 =back
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
 
@@ -290,6 +290,14 @@ The following websites have more information about this module, and may be of he
 in addition to those websites please use your favorite search engine to discover more resources.
 
 =over 4
+
+=item *
+
+MetaCPAN
+
+A modern, open-source CPAN search engine, useful to view POD in HTML format.
+
+L<http://metacpan.org/release/XML-Rabbit>
 
 =item *
 
@@ -311,7 +319,7 @@ L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=XML-Rabbit>
 
 AnnoCPAN
 
-The AnnoCPAN is a website that allows community annonations of Perl module documentation.
+The AnnoCPAN is a website that allows community annotations of Perl module documentation.
 
 L<http://annocpan.org/dist/XML-Rabbit>
 
@@ -351,7 +359,7 @@ L<http://www.cpantesters.org/distro/X/XML-Rabbit>
 
 CPAN Testers Matrix
 
-The CPAN Testers Matrix is a website that provides a visual way to determine what Perls/platforms PASSed for a distribution.
+The CPAN Testers Matrix is a website that provides a visual overview of the test results for a distribution on various Perls/platforms.
 
 L<http://matrix.cpantesters.org/?dist=XML-Rabbit>
 
@@ -387,10 +395,9 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Robin Smidsrød.
+This software is copyright (c) 2012 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
