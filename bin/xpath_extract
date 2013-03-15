@@ -45,7 +45,7 @@ sub print_xml {
 BEGIN {
     package XML::Rabbit::XPathExtract;
 {
-  $XML::Rabbit::XPathExtract::VERSION = '0.2.1';
+  $XML::Rabbit::XPathExtract::VERSION = '0.3.0';
 }
     use Moose;
     with 'XML::Rabbit::RootNode';
@@ -73,7 +73,7 @@ BEGIN {
 
     package XPathObject;
 {
-  $XPathObject::VERSION = '0.2.1';
+  $XPathObject::VERSION = '0.3.0';
 }
     use Moose;
     with 'XML::Rabbit::Node';
@@ -96,7 +96,7 @@ xpath_extract - Extracts the matches for the given XPath query from an XML file
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 AUTHOR
 
@@ -104,7 +104,7 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Robin Smidsrød.
+This software is copyright (c) 2013 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

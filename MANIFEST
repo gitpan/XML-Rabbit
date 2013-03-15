@@ -62,6 +62,8 @@ t/lib/W3C/XMLSchema/Element.pm
 t/lib/W3C/XMLSchema/Group.pm
 t/lib/W3C/XMLSchema/Sequence.pm
 t/regression/node_attribute_traits.t
+t/release-eol.t
+t/release-kwalitee.t
 t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

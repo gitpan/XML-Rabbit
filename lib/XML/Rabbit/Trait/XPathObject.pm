@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObject;
 {
-  $XML::Rabbit::Trait::XPathObject::VERSION = '0.2.1';
+  $XML::Rabbit::Trait::XPathObject::VERSION = '0.3.0';
 }
 use Moose::Role;
 
@@ -63,7 +63,7 @@ XML::Rabbit::Trait::XPathObject - XML DOM object xpath extractor trait
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 SYNOPSIS
 
@@ -109,7 +109,7 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Robin Smidsrød.
+This software is copyright (c) 2013 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

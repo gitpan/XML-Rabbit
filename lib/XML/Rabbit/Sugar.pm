@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Sugar;
 {
-  $XML::Rabbit::Sugar::VERSION = '0.2.1';
+  $XML::Rabbit::Sugar::VERSION = '0.3.0';
 }
 
 # ABSTRACT: Sugar functions for easier declaration of xpath attributes
@@ -156,7 +156,7 @@ XML::Rabbit::Sugar - Sugar functions for easier declaration of xpath attributes
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 FUNCTIONS
 
@@ -202,7 +202,7 @@ and value like the example below shows.
 =head2 has_xpath_object($attr_name, $xpath_query, $isa, @moose_params)
 
 Extracts a single object according to the xpath query specified.  The
-attribute isa parameter is automatically set to a the specified class name. 
+attribute isa parameter is automatically set to the specified class name.
 In the example below it would be set to C<My::Department>.
 
     has_xpath_object 'department' => './department' => 'My::Department';
@@ -251,8 +251,8 @@ native trait is automatically set to C<Array>.
 Extracts a hash of objects according to the xpath query specified.  The
 attribute isa parameter is automatically set to C<HashRef[My::Product]> (see
 example).  The attribute native trait is automatically set to C<Hash>.  The
-xpath query should represent the multiple elements you want to retrieve. 
-The xpath_key query must specify how to lookup the key for each hash entry. 
+xpath query should represent the multiple elements you want to retrieve.
+The xpath_key query must specify how to lookup the key for each hash entry.
 Most likely you'd want to use relative queries for the key like the example
 below shows.
 
@@ -290,7 +290,7 @@ Robin Smidsrød <robin@smidsrod.no>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Robin Smidsrød.
+This software is copyright (c) 2013 by Robin Smidsrød.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
