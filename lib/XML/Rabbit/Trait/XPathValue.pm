@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathValue;
 {
-  $XML::Rabbit::Trait::XPathValue::VERSION = '0.3.0';
+  $XML::Rabbit::Trait::XPathValue::VERSION = '0.4.0';
 }
 use Moose::Role;
 
@@ -42,7 +42,7 @@ XML::Rabbit::Trait::XPathValue - Single value xpath extractor trait
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

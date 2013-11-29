@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Role::Document;
 {
-  $XML::Rabbit::Role::Document::VERSION = '0.3.0';
+  $XML::Rabbit::Role::Document::VERSION = '0.4.0';
 }
 use Moose::Role;
 
@@ -87,7 +87,7 @@ XML::Rabbit::Role::Document - XML Document base class
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

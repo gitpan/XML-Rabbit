@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Sugar;
 {
-  $XML::Rabbit::Sugar::VERSION = '0.3.0';
+  $XML::Rabbit::Sugar::VERSION = '0.4.0';
 }
 
 # ABSTRACT: Sugar functions for easier declaration of xpath attributes
@@ -156,7 +156,7 @@ XML::Rabbit::Sugar - Sugar functions for easier declaration of xpath attributes
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 FUNCTIONS
 

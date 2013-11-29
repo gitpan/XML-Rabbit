@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Trait::XPathObjectMap;
 {
-  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.3.0';
+  $XML::Rabbit::Trait::XPathObjectMap::VERSION = '0.4.0';
 }
 use Moose::Role;
 
@@ -75,7 +75,7 @@ XML::Rabbit::Trait::XPathObjectMap - Multiple XML DOM object xpath extractor tra
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

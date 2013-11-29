@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Role::Node;
 {
-  $XML::Rabbit::Role::Node::VERSION = '0.3.0';
+  $XML::Rabbit::Role::Node::VERSION = '0.4.0';
 }
 use MooseX::Role::Parameterized;
 
@@ -71,7 +71,7 @@ XML::Rabbit::Role::Node - Base role for all nodes
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit::Node;
 {
-  $XML::Rabbit::Node::VERSION = '0.3.0';
+  $XML::Rabbit::Node::VERSION = '0.4.0';
 }
 use Moose::Role;
 
@@ -40,7 +40,7 @@ XML::Rabbit::Node - Node base class
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

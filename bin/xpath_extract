@@ -45,7 +45,7 @@ sub print_xml {
 BEGIN {
     package XML::Rabbit::XPathExtract;
 {
-  $XML::Rabbit::XPathExtract::VERSION = '0.3.0';
+  $XML::Rabbit::XPathExtract::VERSION = '0.4.0';
 }
     use Moose;
     with 'XML::Rabbit::RootNode';
@@ -73,7 +73,7 @@ BEGIN {
 
     package XPathObject;
 {
-  $XPathObject::VERSION = '0.3.0';
+  $XPathObject::VERSION = '0.4.0';
 }
     use Moose;
     with 'XML::Rabbit::Node';
@@ -96,7 +96,7 @@ xpath_extract - Extracts the matches for the given XPath query from an XML file
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 AUTHOR
 

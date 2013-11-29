@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
   'NAME' => 'XML::Rabbit',
   'PREREQ_PM' => {
     'Carp' => '0',
+    'Class::Load' => '0',
     'Encode' => '0',
     'Moose' => '0.89',
     'Moose::Exporter' => '0',
@@ -39,7 +40,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.3.0',
+  'VERSION' => '0.4.0',
   'test' => {
     'TESTS' => 't/*.t t/regression/*.t'
   }

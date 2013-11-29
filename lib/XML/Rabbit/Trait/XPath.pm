@@ -3,11 +3,12 @@ use warnings;
 
 package XML::Rabbit::Trait::XPath;
 {
-  $XML::Rabbit::Trait::XPath::VERSION = '0.3.0';
+  $XML::Rabbit::Trait::XPath::VERSION = '0.4.0';
 }
 use Moose::Role;
 use Moose::Util::TypeConstraints;
 use Perl6::Junction ();
+use Class::Load ();
 
 # ABSTRACT: Base role for other xpath traits
 
@@ -153,7 +154,7 @@ sub _resolve_class {
     my @classes = keys %classes;
 
     # Runtime load each class
-    Class::MOP::load_class($_) for @classes;
+    Class::Load::load_class($_) for @classes;
 
     # Return 0 if multiple classes found,
     # _create_instance() must use $self->isa_map to resolve class name
@@ -207,7 +208,7 @@ sub _create_instance {
     }
     confess("Unable to resolve class for node " . $node->nodeName) unless $class;
 
-    Class::MOP::load_class($class); # FIXME: This should be fixed at line 153
+    Class::Load::load_class($class); # FIXME: This should be fixed at line 153
     my $instance = $class->new(
         xpc           => $parent->xpc,
         node          => $node,
@@ -252,7 +253,7 @@ XML::Rabbit::Trait::XPath - Base role for other xpath traits
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 

@@ -3,7 +3,7 @@ use warnings;
 
 package XML::Rabbit;
 {
-  $XML::Rabbit::VERSION = '0.3.0';
+  $XML::Rabbit::VERSION = '0.4.0';
 }
 use 5.008;
 
@@ -63,7 +63,7 @@ XML::Rabbit - Consume XML with Moose and xpath queries
 
 =head1 VERSION
 
-version 0.3.0
+version 0.4.0
 
 =head1 SYNOPSIS
 
